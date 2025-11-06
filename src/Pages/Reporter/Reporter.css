@@ -140,20 +140,28 @@ textarea{ min-height:250px; }
     gap: 8px;
   }
 
-  .ed-row.header,
+.ed-row.header,
   .ed-row {
-    grid-template-columns: 1fr 1fr;
+    /* En móviles medianos, apilar para evitar cortes horizontales */
+    grid-template-columns: 1fr;
     grid-auto-rows: auto;
     row-gap: 8px;
   }
 
   .ed-row .right {
     text-align: left;
+    justify-content: flex-start;
   }
 
   .statebar {
     flex-wrap: wrap;
   }
+
+  /* Evita que el contenedor recorte botones en el borde derecho */
+  .ed-table { overflow: visible; }
+
+  /* Títulos largos no desbordan */
+  .ed-row .title{ word-break: break-word; overflow-wrap: anywhere; }
 }
 
 /* Pantallas muy pequeñas (<= 480px) */
@@ -190,6 +198,23 @@ textarea{ min-height:250px; }
     display: block;
     font-size: 0.75rem;
   }
+}
+
+/* ===== Responsive table for ReporterMyNews (<=620px) ===== */
+@media (max-width: 620px){
+  .table.rwd thead{ display:none; }
+  .table.rwd{ border-collapse: separate; border-spacing: 0; }
+  .table.rwd tbody,
+  .table.rwd tr,
+  .table.rwd td{ display:block; width:100%; }
+  .table.rwd tr{ padding:12px 10px; border-bottom:1px solid #eef0f3; }
+  .table.rwd td{ padding:8px 10px; border:0; }
+  .table.rwd td::before{
+    content: attr(data-label);
+    display:block; font-weight:700; color:#6b7280; margin-bottom:4px;
+  }
+  /* botones envuelven y no se recortan */
+  .table.rwd td:last-child > div{ display:flex; gap:8px; flex-wrap:wrap; }
 }
 
 

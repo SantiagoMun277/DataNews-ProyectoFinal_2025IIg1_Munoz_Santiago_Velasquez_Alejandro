@@ -40,4 +40,5 @@ a{text-decoration:none;color:inherit}
 .article-meta{display:flex;gap:10px;align-items:center;color:var(--muted);margin:6px 0 14px}
 .article-content{margin:10px 0 16px;line-height:1.7}
 .article-footer{display:flex;gap:18px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-bottom:40px}
-.grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:18px; }
+/* Nota: regla duplicada eliminada; la grilla usa la definición anterior
+   con minmax(260px,1fr) que es mobile‑first y evita overflow en pantallas pequeñas. */

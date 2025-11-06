@@ -34,6 +34,21 @@
 @media (max-width: 720px){
   .ed-row{ grid-template-columns: 1fr; align-items:flex-start; }
   .ed-row .right{ justify-content:flex-start; }
+  /* evitar que la tabla recorte contenido en móviles */
+  .ed-table{ overflow: visible; }
+}
+
+/* Reglas específicas para pantallas <= 620px */
+@media (max-width: 620px){
+  /* Oculta encabezado de la tabla y convierte filas en tarjetas */
+  .ed-row.header{ display:none; }
+  .ed-row{ grid-template-columns: 1fr; align-items:flex-start; }
+  .ed-row .right{ justify-content:flex-start; }
+  .ed-table{ overflow: visible; }
+  .statebar{ flex-wrap: wrap; }
+  .actions .xs{ flex-shrink: 0; }
+  /* Títulos largos no rompen el layout */
+  .ed-row .title{ word-break: break-word; overflow-wrap: anywhere; }
 }
 
 

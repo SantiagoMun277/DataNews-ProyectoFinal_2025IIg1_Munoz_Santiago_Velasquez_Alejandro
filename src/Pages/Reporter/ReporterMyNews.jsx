@@ -96,7 +96,7 @@ export default function ReporterMyNews(){
       {/* Tabla */}
       {loading ? <p>Cargando…</p> : (
         <div className="card" style={{padding:0}}>
-          <table className="table" style={{margin:0}}>
+          <table className="table rwd" style={{margin:0}}>
             <thead>
               <tr>
                 <th style={{width:140}}>Estado</th>
@@ -108,10 +108,10 @@ export default function ReporterMyNews(){
             <tbody>
               {filtered.map(n=>(
                 <tr key={n.id}>
-                  <td><span className={badgeClass(n.estado)}>{n.estado || 'Edición'}</span></td>
-                  <td>{n.titulo || '(Sin título)'}</td>
-                  <td>{n.categoriaSlug || '-'}</td>
-                  <td>
+                  <td data-label="Estado"><span className={badgeClass(n.estado)}>{n.estado || 'Edición'}</span></td>
+                  <td data-label="Título">{n.titulo || '(Sin título)'}</td>
+                  <td data-label="Categoría">{n.categoriaSlug || '-'}</td>
+                  <td data-label="Acción">
                     <div style={{display:'flex', gap:8, flexWrap:'wrap'}}>
                       <Link className="btn" to={`/reportero/editar/${n.id}`} style={btnEdit}>
                         Editar
