@@ -1,0 +1,46 @@
+/* Estilos anti-desborde y responsivos para el contenido del artículo */
+.article .article-content{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.65;
+}
+
+/* Imágenes dentro del contenido */
+.article .article-content img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  object-fit: contain;
+}
+
+/* Tablas responsivas (scroll horizontal si se pasan) */
+.article .article-content table{
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Bloques de código con scroll horizontal si es necesario */
+.article .article-content pre,
+.article .article-content code{
+  white-space: pre;
+  overflow-x: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* Iframes y videos ajustados al ancho */
+.article .article-content iframe,
+.article .article-content video{
+  max-width: 100%;
+}
+
+/* Imagen principal del artículo (por si no la tienes en otro CSS) */
+.article .article-img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+

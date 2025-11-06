@@ -1,0 +1,227 @@
+/* Estilos base para la página de edición del reportero */
+.ReporterEdit {
+  padding: 20px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #222;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Filas de formulario */
+.form-row {
+  margin-bottom: 14px;
+}
+
+.form-row label div:first-child {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+/* Inputs y selects */
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* Botones */
+.btn {
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #d1d5db;
+}
+
+.btn.primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #1e40af;
+}
+
+.btn.ghost {
+  background-color: transparent;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.btn.ghost:hover {
+  background-color: rgba(37,99,235,0.05);
+}
+
+/* Badge del estado */
+.badge {
+  background-color: #10b981;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Imagen URL input + botón demo */
+.form-row div[style*="display:flex"] input {
+  flex: 1;
+}
+
+/* Adaptabilidad */
+@media (max-width: 900px) {
+  .ReporterEdit {
+    padding: 12px;
+  }
+
+  .ReporterEdit > div[style*="grid"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ReporterEdit {
+  padding: 20px;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  border-radius: 10px;
+}
+
+/* Encabezado */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Grid principal */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bloque verde */
+.content-block {
+  margin-top: 24px;
+  background-color: #e6f4ea;
+  border: 1px solid #b5e0c5;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.content-block h3 {
+  color: #166534;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Filas generales */
+.form-row {
+  margin-bottom: 14px;
+}
+
+.form-row label div:first-child {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-row textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* Filas de fecha */
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* Botones */
+.btn {
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn.primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #1e40af;
+}
+
+.btn.ghost {
+  background-color: transparent;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.badge {
+  background-color: #b3ac75;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* Botón de acción */
+.action-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* Imagen URL fila */
+.image-url-row {
+  display: flex;
+  gap: 8px;
+}

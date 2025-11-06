@@ -1,0 +1,264 @@
+.rep-wrap{ padding: 22px 0 40px; }
+.rep-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.rep-head .btn{ background:#e11d29; color:#fff; border:0; padding:10px 14px; border-radius:10px; font-weight:700; }
+.rep-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:14px; }
+.rep-card{ background:#fff; border:1px solid #eee; border-radius:12px; padding:12px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.rep-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.state{ padding:2px 8px; border-radius:999px; background:#f3f4f6; font-size:.75rem; font-weight:700; }
+.state.publicado{ background:#d1fae5; }
+.state.terminado{ background:#fee2e2; }
+.state.desactivado{ background:#e5e7eb; }
+.rep-actions{ display:flex; gap:8px; margin-top:8px; }
+.rep-actions .small{ padding:6px 10px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+.rep-actions .ghost{ background:#fff; color:#e11d29; border:1px solid #e11d29; text-decoration:none; }
+.muted{ color:#6b7280; }
+
+
+
+
+.reporter-wrap{ padding:18px 0 40px; }
+.rep-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.rep-user{ display:flex; gap:12px; align-items:center; }
+.rep-avatar{ width:44px; height:44px; border-radius:999px; display:grid; place-content:center;
+  background:#fff; border:1px solid #eee; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+.rep-tabs{ display:flex; gap:10px; }
+.rep-tab{ padding:8px 14px; border-radius:10px; font-weight:700; color:#111; background:#fff; border:1px solid #eee; }
+.rep-tab.active{ border-color:var(--brand-red); color:var(--brand-red); background:#fff; }
+.rep-body{ background:#fff; border:1px solid #eee; border-radius:16px; padding:16px; }
+.form-row{ display:grid; gap:10px; margin-bottom:12px; }
+.grid-2{ grid-template-columns: 1fr 1fr; }
+.grid-3{ grid-template-columns: 1fr 1fr 1fr; }
+input, select, textarea{ border:1px solid #e5e7eb; border-radius:10px; padding:10px 12px; }
+textarea{ min-height:250px; }
+.btn{ padding:10px 14px; border-radius:10px; border:1px solid #ddd; background:#fff; font-weight:700; }
+.btn.primary{ background:var(--brand-red); color:#fff; border-color:var(--brand-red); }
+.btn.ghost{ background:#fff; color:var(--brand-red); border-color:var(--brand-red); }
+.table{ width:100%; border-collapse:collapse; }
+.table th,.table td{ padding:10px; border-bottom:1px solid #eee; text-align:left; }
+.badge{ display:inline-block; padding:4px 8px; border-radius:999px; background:#f3f4f6; font-weight:700; }
+.badge.ok{ background:#dcfce7; color:#166534; }
+.badge.warn{ background:#fff7ed; color:#9a3412; }
+.row-actions{ display:flex; gap:8px; flex-wrap:wrap; }
+
+
+/* src/Pages/Reporter/ReporterLayout.jsx */
+.rep-shell{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 70vh;
+  gap: 16px;
+  padding: 16px;
+}
+.rep-aside{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:16px;
+}
+.rep-brand{ margin:0 0 12px; font-size:1.1rem; }
+.rep-nav{ display:flex; flex-direction:column; gap:8px; }
+.rep-nav a{
+  padding:10px 12px; border-radius:10px; text-decoration:none; color:#111;
+}
+.rep-nav a.active{ background:#fbeaec; color:#b3131b; font-weight:700; }
+.rep-main{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:16px;
+}
+
+
+
+
+/* ==== RESPONSIVE GENERAL PARA REPORTERO Y EDITOR ==== */
+
+/* Tablets o pantallas medianas */
+@media (max-width: 1024px) {
+  .rep-shell {
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+  }
+  .rep-main, .rep-aside {
+    padding: 12px;
+  }
+  .rep-card {
+    padding: 10px;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    font-size: 0.95rem;
+  }
+}
+
+/* Móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .rep-shell {
+    grid-template-columns: 1fr; /* apila el menú y el contenido */
+  }
+
+  .rep-aside {
+    display: none; /* se oculta el menú lateral si estorba */
+  }
+
+  .rep-main {
+    padding: 14px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  textarea {
+    min-height: 300px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .rep-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rep-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Editor Dashboard */
+  .ed-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .ed-row.header,
+  .ed-row {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    row-gap: 8px;
+  }
+
+  .ed-row .right {
+    text-align: left;
+  }
+
+  .statebar {
+    flex-wrap: wrap;
+  }
+}
+
+/* Pantallas muy pequeñas (<= 480px) */
+@media (max-width: 480px) {
+  .rep-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .rep-user img, .rep-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .rep-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ed-row.header {
+    display: none; /* oculta cabecera de tabla en móviles */
+  }
+
+  .ed-row {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .ed-row .title small {
+    display: block;
+    font-size: 0.75rem;
+  }
+}
+
+
+
+/* ==== ReporterEdit Responsive ==== */
+/* ==== Reporter Form Responsive (para Create y Edit) ==== */
+
+/* Base general */
+.rep-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+
+/* Campos y estructura */
+.rep-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rep-form label div {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.rep-form input,
+.rep-form select,
+.rep-form textarea {
+  font-size: 0.95rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Imagen y botones */
+.rep-form textarea {
+  min-height: 460px;
+  line-height: 1.4;
+  resize: vertical;
+}
+
+/* Botones */
+.rep-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.rep-actions .btn {
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+/* ---- Responsivo ---- */
+
+/* Tablets horizontales */
+@media (max-width: 1024px) {
+  .rep-form {
+    grid-template-columns: 1fr; /* una sola columna */
+  }
+  .rep-form textarea {
+    min-height: 380px;
+  }
+  .rep-actions {
+    justify-content: flex-start;
+  }
+}
+

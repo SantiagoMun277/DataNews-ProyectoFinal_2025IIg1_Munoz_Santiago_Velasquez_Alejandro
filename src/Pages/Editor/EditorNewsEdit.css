@@ -1,0 +1,230 @@
+/* ==== Estilos base del formulario de edición de noticias ==== */
+.edit-news {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 24px;
+}
+
+.edit-news h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.edit-news .form-row {
+  margin-bottom: 14px;
+}
+
+.edit-news .form-row input,
+.edit-news .form-row select,
+.edit-news .form-row textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 15px;
+  transition: border 0.2s;
+}
+
+.edit-news .form-row input:focus,
+.edit-news .form-row select:focus,
+.edit-news .form-row textarea:focus {
+  border-color: #d00;
+  outline: none;
+}
+
+/* ==== Responsive hasta 768px ==== */
+@media (max-width: 768px) {
+  .edit-news .edit-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edit-news .brand {
+    display: none;
+  }
+}
+
+/* ==== Responsive hasta 640px ==== */
+@media (max-width: 640px) {
+  .edit-news .edit-layout {
+    flex-direction: column;
+  }
+
+  .edit-news textarea {
+    min-height: 280px !important;
+  }
+
+  .edit-news button {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+}
+
+/* ==== Responsive hasta 480px ==== */
+@media (max-width: 480px) {
+  .edit-news {
+    padding: 16px;
+  }
+}
+
+/* ==== Botones de acción ==== */
+.edit-news .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.edit-news .btn.primary {
+  background: #d00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-news .btn.primary:hover {
+  background: #b00;
+}
+
+/* Pills de estado */
+.pill {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pill.publicado { background: #00b894; color: white; }
+.pill.desactivada { background: #b2bec3; color: #2d3436; }
+.pill.terminada { background: #0984e3; color: white; }
+.pill.edicion { background: #fdcb6e; color: #2d3436; }
+/* ===== BLOQUE DE CONTENIDO, IMAGEN Y AUTOR ===== */
+.content-section {
+  margin-top: 30px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.content-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 14px;
+}
+
+/* Contenedor del contenido y la imagen */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Área de texto (contenido) */
+.content-grid textarea {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  resize: vertical;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+/* Imagen */
+.image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-preview button {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.image-preview button:hover {
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+/* Autor del artículo */
+.author-info {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-info img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d1d5db;
+}
+
+.author-info span {
+  font-weight: 600;
+  color: #111827;
+}
+/* ==== Ajustes finales de coherencia visual ==== */
+
+/* Hace que el bloque de contenido combine con el formulario */
+.edit-news .content-section {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+}
+
+/* Ajuste visual de inputs y textos dentro del bloque */
+.edit-news .content-section textarea,
+.edit-news .content-section input {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Autor dentro del contexto de edición */
+.edit-news .author-info span {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Botón de imagen con colores del tema principal (rojo) */
+.image-preview button {
+  border: 1px solid #d00;
+  color: #d00;
+}
+
+.image-preview button:hover {
+  background-color: rgba(208, 0, 0, 0.1);
+}

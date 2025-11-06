@@ -1,0 +1,137 @@
+/* ---------- Header base (reportero y editor comparten) ---------- */
+.site-header.reporter .top-inner,
+.site-header.reporter.editor .top-inner{
+  display: grid;
+  grid-template-columns: auto 1fr auto;       /* user | brand | actions */
+  grid-template-areas: "user brand actions";
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+/* Áreas */
+.site-header.reporter .user-chip,
+.site-header.reporter.editor .user-chip{ grid-area: user; }
+
+.site-header.reporter .brand,
+.site-header.reporter.editor .brand{ grid-area: brand; justify-self: center; }
+
+.site-header.reporter .actions,
+.site-header.reporter.editor .actions{ grid-area: actions; justify-self: end; }
+
+/* Logo fluido */
+.site-header.reporter .brand img,
+.site-header.reporter.editor .brand img{
+  height: 300px;           /* desktop base */
+  max-width: 42vw;        /* evita que tape al usuario/acciones */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Chip de usuario */
+.site-header.reporter .user-chip,
+.site-header.reporter.editor .user-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;           /* permite truncar textos internos */
+  cursor: pointer;
+}
+
+.site-header.reporter .user-chip .avatar,
+.site-header.reporter.editor .user-chip .avatar{
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  display: grid; place-content: center;
+  background: #f3f4f6; border: 1px solid #e5e7eb;
+  font-size: 16px;
+}
+
+/* Nombre/correo: elipsis si no cabe */
+.site-header.reporter .user-chip > div:last-child,
+.site-header.reporter.editor .user-chip > div:last-child{
+  min-width: 0;
+}
+.site-header.reporter .user-chip strong,
+.site-header.reporter.editor .user-chip strong{
+  display: block;
+  max-width: 32ch;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.site-header.reporter .user-chip .muted,
+.site-header.reporter.editor .user-chip .muted{
+  max-width: 36ch;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: #6b7280;
+}
+
+/* Botón cerrar sesión */
+.site-header.reporter .actions .btn,
+.site-header.reporter.editor .actions .btn{
+  font-size: 15px; padding: 6px 14px;
+}
+
+/* ---------- Breakpoints ---------- */
+
+/* ≤ 1200px: logo un poco más pequeño */
+@media (max-width:1200px){
+  .site-header.reporter .brand img,
+  .site-header.reporter.editor .brand img{ height: 64px; max-width: 46vw; }
+}
+
+/* ≤ 992px: aprieta tipografías y avatar */
+@media (max-width:992px){
+  .site-header.reporter .brand img,
+  .site-header.reporter.editor .brand img{ height: 56px; }
+
+  .site-header.reporter .user-chip .avatar,
+  .site-header.reporter.editor .user-chip .avatar{ width: 30px; height: 30px; }
+
+  .site-header.reporter .actions .btn,
+  .site-header.reporter.editor .actions .btn{ font-size:14px; padding:5px 12px; }
+}
+
+/* ≤ 768px: dos filas. Arriba user + actions, abajo el logo centrado */
+@media (max-width:768px){
+  .site-header.reporter .top-inner,
+  .site-header.reporter.editor .top-inner{
+    grid-template-columns: 1fr auto;                 /* user | actions */
+    grid-template-areas:
+      "user actions"
+      "brand brand";                                  /* logo ocupa la segunda fila completa */
+    row-gap: 8px;
+  }
+
+  .site-header.reporter .brand img,
+  .site-header.reporter.editor .brand img{ height: 52px; max-width: 70vw; }
+
+  /* acorta más los textos */
+  .site-header.reporter .user-chip strong,
+  .site-header.reporter.editor .user-chip strong{ max-width: 24ch; }
+  .site-header.reporter .user-chip .muted,
+  .site-header.reporter.editor .user-chip .muted{ max-width: 26ch; }
+}
+
+/* ≤ 640px: oculta el correo para ganar espacio, botón compacto */
+@media (max-width:640px){
+  .site-header.reporter .user-chip .muted,
+  .site-header.reporter.editor .user-chip .muted{ display:none; }
+
+  .site-header.reporter .brand img,
+  .site-header.reporter.editor .brand img{ height: 46px; }
+
+  .site-header.reporter .actions .btn,
+  .site-header.reporter.editor .actions .btn{ font-size:13px; padding:4px 10px; }
+}
+
+/* ≤ 420px: avatar más chico y toques finales */
+@media (max-width:420px){
+  .site-header.reporter .user-chip .avatar,
+  .site-header.reporter.editor .user-chip .avatar{ width:26px; height:26px; }
+
+  .site-header.reporter .brand img,
+  .site-header.reporter.editor .brand img{ height: 42px; }
+
+  .site-header.reporter .actions .btn,
+  .site-header.reporter.editor .actions .btn{ font-size:12px; padding:3px 8px; }
+}

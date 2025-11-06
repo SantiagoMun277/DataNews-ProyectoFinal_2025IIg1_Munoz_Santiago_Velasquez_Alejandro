@@ -1,0 +1,76 @@
+.site-footer{
+  margin-top:28px;
+  border-top:1px solid var(--line);
+  background:var(--bg-soft);
+}
+
+.site-footer .wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:22px 16px;
+  display:grid;
+  grid-template-columns: 1fr 1.4fr 1fr; /* nav | marca | contactos */
+  gap:22px;
+}
+
+/* Columna base */
+.fcol h4{margin:0 0 10px;color:var(--ink);font-size:1.05rem;font-weight:900}
+.fcol ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fcol a{color:var(--ink-2);font-weight:600}
+.fcol a:hover{color:var(--brand-red)}
+
+/* Navegación (izquierda) */
+.navcol ul li{padding:2px 0}
+
+/* Marca (centro) */
+.brandcol .brandline{
+  display:flex;align-items:center;gap:10px;margin-bottom:6px;color:var(--brand-red);font-weight:900
+}
+.brandcol .brandline img{height:40px}
+.brandcol .phrase{margin:6px 0 8px;color:#3f424a}
+.brandcol .meta p{margin:4px 0;color:#555}
+
+/* Contactos (derecha) */
+.contactcol ul li{padding:2px 0}
+
+/* Barra inferior */
+.footbar{
+  border-top:1px solid var(--line);
+  background:#fff;
+  color:#666;
+}
+.footbar-inner{
+  display:flex;gap:10px;align-items:center;justify-content:center;
+  padding:10px 0;
+}
+.footbar a{color:var(--brand-red);font-weight:700}
+.sep{opacity:.4}
+
+/* Responsive */
+@media (max-width:900px){
+  .site-footer .wrap{grid-template-columns:1fr;gap:16px}
+  .footbar-inner{justify-content:space-between}
+}
+
+
+.bo-footer{
+  margin-top:24px;
+  border-top:1px solid #e9e9ee;
+  background:#fafafa;
+  color:#444;
+}
+.bo-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 0;
+}
+.bo-brand{ font-weight:700; letter-spacing:.2px; }
+.bo-meta{ display:flex; align-items:center; flex-wrap:wrap; gap:8px; font-size:.95rem; }
+.bo-meta .dot{ opacity:.5; }
+.muted{ opacity:.6; }
+
+@media (max-width:680px){
+  .bo-inner{ flex-direction:column; align-items:flex-start; }
+}

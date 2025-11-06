@@ -1,0 +1,38 @@
+/* Capa oscura */
+.modal-backdrop{
+  position: fixed; inset: 0; background: rgba(0,0,0,.45);
+  display: grid; place-items: center; z-index: 1000;
+}
+
+/* Tarjeta */
+.modal-card{
+  width: min(720px, 92vw);
+  background: #fff; color:#222; border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  padding: 16px 18px 18px;
+  max-height: 90vh; overflow: auto;
+}
+
+.modal-header{
+  display:flex; align-items:center; gap:12px; margin-bottom: 8px;
+}
+.modal-avatar{ width:42px; height:42px; display:grid; place-items:center;
+  background:#f2f2f2; border-radius:50%; font-size:20px; }
+.icon-btn{ margin-left:auto; background:transparent; border:0; font-size:20px; cursor:pointer; }
+
+.muted{ color:#6b7280; font-size: .9rem; }
+.modal-section{ margin-top: 6px; }
+.modal-section h3{ margin: 10px 0; font-size: 1.05rem; }
+
+.form-grid{
+  display:grid; grid-template-columns: 1fr; gap:6px;
+}
+.form-grid input{
+  border:1px solid #e5e7eb; border-radius:10px; padding:10px 12px; outline:none;
+}
+.row.end{ display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
+
+.btn{ background:#e11d48; color:#fff; border:0; padding:8px 12px; border-radius:10px; cursor:pointer; }
+.btn.ghost{ background:transparent; color:#e11d48; border:1px solid #e11d48; }
+
+.form-msg{ margin-top:6px; font-size:.9rem; }
