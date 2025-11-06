@@ -2,7 +2,7 @@
 
 // src/Pages/Reporter/ReporterLayout.jsx
 import { Outlet } from 'react-router-dom';
-import './reporter.css';
+import './Reporter.css';
 
 export default function ReporterLayout(){
   return (
