@@ -103,7 +103,7 @@ import './App.css'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './Components/Header/Header.jsx'
 import Footer from './Components/Fooder/Footer.jsx'
-import BackofficeFooter from './Components/Fooder/BackofficeFooter.jsx' // 👈 NUEVO
+import BackofficeFooter from './Components/Fooder/BackofficeFooter.jsx' 
 import Home from './Pages/Home/Home.jsx'
 import Section from './Pages/Section/Section.jsx'
 import NewsDetail from './Pages/NewsDetail/NewsDetail.jsx'
